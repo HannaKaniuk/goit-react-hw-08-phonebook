@@ -1,5 +1,5 @@
 import css from './ContactListItem.module.css';
-export const ContactListItem = ({ id, name, number, onDeleteContact }) => {
+export const ContactsListItem = ({ id, name, number, onDeleteContact }) => {
   return (
     <li className={css.contactListItem}>
       {name}: {number}{' '}
