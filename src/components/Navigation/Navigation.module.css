@@ -1,19 +1,29 @@
 .link {
   display: inline-block;
   text-decoration: none;
-  padding: 12px;
+  padding: 10px;
   font-weight: 700;
   color: rgb(30, 67, 77);
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .active {
   text-decoration: none;
   font-weight: 700;
   color: #eee4fb;
-  font-size: 18px;
+  font-size: 12px;
   display: inline-block;
-  padding: 12px;
+  padding: 10px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
   border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  .link {
+    padding: 12px;
+    font-size: 18px;
+  }
+  .active {
+    padding: 12px;
+    font-size: 18px;
+  }
 }

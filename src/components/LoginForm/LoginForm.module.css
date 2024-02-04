@@ -11,16 +11,17 @@
   margin-bottom: 20px;
   z-index: 1;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  width: 200px;
 }
 
 .input {
   display: flex;
   justify-content: flex-end;
-  width: 300px;
+  width: 200px;
   height: 20px;
   margin-left: 20px;
   border-radius: 5px;
-  background-color: #f4f7d4;
+  background-color: #f9fcfd;
   border: 1px solid #069797;
   padding: 3px;
 }
@@ -50,4 +51,9 @@
   background-color: #076d6d;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+@media screen and (min-width: 768px) {
+  .form_wrapper {
+    width: 300px;
+  }
 }
