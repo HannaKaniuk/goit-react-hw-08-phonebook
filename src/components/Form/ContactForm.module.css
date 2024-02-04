@@ -26,6 +26,7 @@
 .input:hover,
 .input:focus {
   border: 3px solid rgb(30, 67, 77);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
 }
 .button_add {
   width: 110px;

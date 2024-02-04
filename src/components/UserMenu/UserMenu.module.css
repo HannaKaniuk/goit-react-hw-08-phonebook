@@ -6,8 +6,11 @@
 }
 
 .username {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  padding: 10px;
+  color: #eee4fb;
 }
 
 .button_add {

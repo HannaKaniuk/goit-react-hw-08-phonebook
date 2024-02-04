@@ -7,7 +7,7 @@ import { refreshUser } from '../../redux/auth/operations';
 import { RestrictedRoute } from '../RestrictedRoute';
 import { PrivateRoute } from '../PrivateRoute';
 import css from './App.module.css';
-
+import Loader from 'components/Loader/Loader';
 const Home = lazy(() => import('../../pages/Home'));
 const Register = lazy(() => import('../../pages/Register'));
 const Login = lazy(() => import('../../pages/Login'));
@@ -22,7 +22,7 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <Loader />
   ) : (
     <div className={css.appContainer}>
       <Routes>
