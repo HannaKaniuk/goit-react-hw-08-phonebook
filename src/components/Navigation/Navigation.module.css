@@ -3,15 +3,17 @@
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: black;
+  color: rgb(30, 67, 77);
   font-size: 18px;
 }
 
 .active {
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 700;
-  color: #790df2;
+  color: #eee4fb;
   font-size: 18px;
   display: inline-block;
   padding: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  border-radius: 10px;
 }

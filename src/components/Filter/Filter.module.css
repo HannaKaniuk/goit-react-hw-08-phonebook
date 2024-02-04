@@ -1,15 +1,29 @@
+.wrapperFilter {
+  height: 40px;
+  display: flex;
+  border: none;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
 .filterInput {
   height: 30px;
-  border-radius: 5px;
-  border: 2px solid rgb(126, 126, 126);
-  width: 70%;
+  border-radius: 15px;
+  border: 2px solid rgb(24, 58, 55);
+  width: 90%;
   margin-bottom: 10px;
 }
 .filterInput:focus {
-  border: 2px solid rgb(97, 97, 218);
+  border: 2px solid #069797;
   outline: none;
 }
 .filterInput:hover {
-  border: 2px solid rgb(97, 97, 218);
+  border: 2px solid #069797;
   outline: none;
+}
+
+.label {
+  text-align: center;
 }

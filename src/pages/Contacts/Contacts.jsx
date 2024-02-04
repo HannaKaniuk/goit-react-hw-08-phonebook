@@ -3,7 +3,7 @@ import { NotificationContainer } from 'react-notifications';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import { SectionTitle } from 'components/SectionTitle/SectionTitle';
 import { SectionSubtitle } from 'components/SectionSubtitle/SectionSubtitle';
-import { ContactForm } from 'components/ContactForm/ContactForm';
+import { ContactForm } from 'components/Form/ContactForm';
 import { ContactsFilter } from 'components/Filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';

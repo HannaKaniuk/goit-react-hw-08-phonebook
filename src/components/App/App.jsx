@@ -1,16 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './Layout/Layout';
+import { Layout } from '../Layout/Layout';
 import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsRefreshing } from '../redux/auth/selectors';
-import { refreshUser } from '../redux/auth/operations';
-import { RestrictedRoute } from './RestrictedRoute';
-import { PrivateRoute } from './PrivateRoute';
+import { selectIsRefreshing } from '../../redux/auth/selectors';
+import { refreshUser } from '../../redux/auth/operations';
+import { RestrictedRoute } from '../RestrictedRoute';
+import { PrivateRoute } from '../PrivateRoute';
+import css from './App.module.css';
 
-const Home = lazy(() => import('../pages/Home'));
-const Register = lazy(() => import('../pages/Register'));
-const Login = lazy(() => import('../pages/Login'));
-const Contacts = lazy(() => import('../pages/Contacts/Contacts'));
+const Home = lazy(() => import('../../pages/Home'));
+const Register = lazy(() => import('../../pages/Register'));
+const Login = lazy(() => import('../../pages/Login'));
+const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ export const App = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
-    <div>
+    <div className={css.appContainer}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

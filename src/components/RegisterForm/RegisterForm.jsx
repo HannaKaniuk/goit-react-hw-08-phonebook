@@ -1,9 +1,6 @@
 import { useDispatch } from 'react-redux';
 import css from './RegisterForm.module.css';
 import { register } from '../../redux/auth/operations';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import { IoIosPersonAdd } from 'react-icons/io';
-import { IoMdMailUnread } from 'react-icons/io';
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
@@ -31,7 +28,6 @@ export const RegisterForm = () => {
       autoComplete="off"
     >
       <label className={css.label}>
-        <IoIosPersonAdd className={css.iconUser} />
         Username
         <input
           className={css.input}
@@ -42,13 +38,11 @@ export const RegisterForm = () => {
         />
       </label>
       <label className={css.label}>
-        <IoMdMailUnread className={css.iconMail} />
         Email
         <input className={css.input} type="email" name="email" required />
       </label>
 
       <label className={css.label}>
-        <RiLockPasswordFill className={css.iconPassword} />
         Password
         <input
           className={css.input}

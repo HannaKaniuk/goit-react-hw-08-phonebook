@@ -2,8 +2,6 @@ import React from 'react';
 import css from './LoginForm.module.css';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
-import { RiLockPasswordFill } from 'react-icons/ri';
-import { IoMdMailUnread } from 'react-icons/io';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -27,12 +25,10 @@ export const LoginForm = () => {
       autoComplete="off"
     >
       <label className={css.label}>
-        <IoMdMailUnread className={css.iconMail} />
         Email
         <input className={css.input} type="email" name="email" required />
       </label>
       <label className={css.label}>
-        <RiLockPasswordFill className={css.iconPassword} />
         Password
         <input
           className={css.input}

@@ -1,59 +1,37 @@
 import css from './ContactForm.module.css';
 import { NotificationManager } from 'react-notifications';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/contacts/selectors';
 import { addContact } from '../../redux/contacts/operations';
 
 export const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
   const contacts = useSelector(selectContacts);
-  const dispatch = useDispatch();
 
-  const handleChange = evt => {
-    const { name, value } = evt.target;
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-      case 'number':
-        setNumber(value);
-        break;
-      default:
-        return;
-    }
-  };
-  const handleSubmit = evt => {
+  const handleFormSubmit = evt => {
     evt.preventDefault();
-    const contactExists = contacts.some(
-      contact => contact.name.toLowerCase() === name.toLowerCase()
-    );
-    if (contactExists) {
-      NotificationManager.info(`${name} is already in contacts.`);
+    const objUserData = Object.fromEntries(new FormData(evt.target));
+    const contactExists = contacts.some(contact => contact.name.toLowerCase());
+    if (contactExists.includes(objUserData.name.toLowerCase())) {
+      NotificationManager.info(`${objUserData.name} is already in contacts.`);
       return;
     }
-    dispatch(addContact({ name, number }));
-    setName('');
-    setNumber('');
+    addContact(objUserData);
+    evt.target.reset();
   };
   return (
-    <form
-      // ref={inputForm}
-      className={css.formContact}
-      onSubmit={handleSubmit}
-    >
+    <form className={css.formContact} onSubmit={handleFormSubmit}>
       <label htmlFor="nameInput" className={css.labelInput}>
         Name
       </label>
       <input
         type="text"
         name="name"
+        id="nameInput"
         pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
         className={css.inputContact}
-        onChange={handleChange}
+        autoComplete="name"
       />
       <label htmlFor="phoneInput" className={css.labelInput}>
         Number
@@ -66,6 +44,7 @@ export const ContactForm = () => {
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
         className={css.inputContact}
+        autoComplete="tel"
       />
       <button type="submit" className={css.buttonContact}>
         Add Contact

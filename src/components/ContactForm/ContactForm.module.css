@@ -2,11 +2,11 @@
   height: 30px;
   border-radius: 5px;
   border: 2px solid rgb(126, 126, 126);
-  width: 50%;
+  width: 100%;
   margin-bottom: 10px;
 }
 .inputContact:focus {
-  border: 2px solid rgb(97, 97, 218);
+  border: 2px solid rgb(68, 68, 209);
   outline: none;
 }
 .inputContact:hover {
